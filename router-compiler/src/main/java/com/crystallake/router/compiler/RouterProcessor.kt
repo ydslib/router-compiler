@@ -250,13 +250,13 @@ class RouterProcessor : BaseProcessor() {
 
     private fun routeVerify(meta: RouteMeta): Boolean {
         val path = meta.path
-        if (path.isNullOrEmpty() || !path.startsWith("/")) {
+        if (path.isNullOrEmpty() || !path.contains(".")) {
             return false
         }
 
         if (meta.group.isNullOrEmpty()) {
             try {
-                val defaultGroup = path.substring(1, path.indexOf("/", 1))
+                val defaultGroup = path.substring(0, path.indexOf("."))
                 if (defaultGroup.isNullOrEmpty()) {
                     return false
                 }
