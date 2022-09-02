@@ -11,7 +11,7 @@ dependencies {
     compileOnly 'com.google.auto.service:auto-service-annotations:1.0-rc7'
 
     implementation 'com.squareup:javapoet:1.8.0'
-    implementation 'com.github.ydslib:router-annotation:1.0.6'
+    implementation 'com.github.ydslib:router-annotation:1.0.0'
 }
 
 java {
@@ -25,9 +25,9 @@ publishing {
         // MavenPublication必须有，这个是调用的任务类
         mavenJava(MavenPublication) {
             // 这里头是artifacts的配置信息，不填会采用默认的
-            groupId = 'com.crystallake'
+            groupId = 'com.github.ydslib'
             artifactId = 'router-compiler'
-            version = '1.0.6'
+            version = '1.0.0'
 
             from components.java
         }
